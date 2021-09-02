@@ -1,4 +1,4 @@
-var font1 ; font2
+var font1 ; font2;
 
 
 function setup() {
@@ -9,8 +9,11 @@ function setup() {
 
 function draw() {
   background("purple") ;
-  textFont(font1, 48) ;
+  textFont(font1,) ;
+  textSize(48) ;
   text("Hello World", 100, 100) ;
-  textFont(font2, 58) ;
-  text("Hello World", 20, 200) ;
+
+  textFont(font2,) ;
+  textSize(48) ;
+  text("Hello World", 100, 200) ;
 }
