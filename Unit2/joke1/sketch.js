@@ -22,11 +22,7 @@ function draw() {
       break;
   }
 
-timer++ ;
-if (timer > 3*60){
-    timer = 0 ;
-    state++ ;
-    if (state > 1) state = 0 ;
+
 }
   // joke 2:  text('what did the ocean say to the beach, nothing it just waved') ;
 
