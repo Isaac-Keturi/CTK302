@@ -1,5 +1,4 @@
 let state = 0;
-let timer = 0;
 
 {}
 function setup() {
@@ -26,7 +25,6 @@ function draw() {
 }
   // joke 2:  text('what did the ocean say to the beach, nothing it just waved') ;
 
-}
 
 
 function mouseReleased() {
