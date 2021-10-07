@@ -137,9 +137,4 @@ function draw() {
         state++;
         //if (state > 5) state = 6 ;
     }
-
-
-fill('white');
-textSize(10);
-text("x = " + mouseX + ",  y = " + mouseY, 200, 50) ;
 }
