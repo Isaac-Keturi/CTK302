@@ -87,3 +87,7 @@ class Bubble {
 
 
 }
+
+function touchStarted() {
+  getAudioContext().resume();
+}
