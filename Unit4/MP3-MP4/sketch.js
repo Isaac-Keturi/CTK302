@@ -8,39 +8,47 @@ var yPosition = 0;
 var orc, gandalf, ministirith;
 var cars = [];
 var frogPos;
+//var song,
+
+  //function preload() {
+  //  song = loadSound('assets/lotrsong.mp3');
+
+  //  song.loop();
+  //  song.pause();
+
+  //}
 
 
-function setup() {
+  function setup() {
 
-  createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
 
-  // initialize accelerometer variables
-  alpha = 0;
-  beta = 0;
-  gamma = 0;
+    // initialize accelerometer variables
+    alpha = 0;
+    beta = 0;
+    gamma = 0;
 
 
-  // spawn a bunch of cars
-  for (var i = 0; i < 40; i++) {
-    cars.push(new Car());
+    // spawn a bunch of cars
+    for (var i = 0; i < 40; i++) {
+      cars.push(new Car());
+    }
+
+    // initialize the frog's position
+    frogPos = createVector(width / 2, height - 80);
+
+    // load any images you need
+    orc = loadImage("assets/orc3.jpg");
+    gandalf = loadImage("assets/gandalf.jpg");
+    ministirith = loadImage("assets/ministirith.jpg");
+    imageMode(CENTER);
+    rectMode(CENTER);
+    noStroke();
   }
 
-  // initialize the frog's position
-  frogPos = createVector(width / 2, height - 80);
-
-  // load any images you need
-  orc = loadImage("assets/orc3.jpg");
-  gandalf = loadImage("assets/gandalf.jpg");
-  ministirith = loadImage("assets/ministirith.jpg");
-  imageMode(CENTER);
-  rectMode(CENTER);
-  noStroke();
-}
-
 function draw() {
-
   background("#261509");
-  image(ministirith, width/2, height/2, windowWidth, windowHeight);
+  image(ministirith, width / 2, height / 2, windowWidth, windowHeight);
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -54,12 +62,8 @@ function draw() {
   translate(xPosition, yPosition); // move everything over by x, y
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
-
-  //change
-  // draw the FROG
-  // image(bunnyImage, 0, 0, 500, 500);
   image(gandalf, 0, 0, 80, 80);
-//  ellipse(0, 0, 80, 80);
+
   pop();
 
 
@@ -83,23 +87,23 @@ function draw() {
   //different text
   text("DEFEAT THE ORCS", width / 2, 600, windowWidth - 200, windowHeight - 200);
 
-//comment out
+  //comment out
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
-//  textAlign(LEFT);
+  //  textAlign(LEFT);
   //textSize(20);
   //fill('black');
-//  text("orientation data:", 25, 25);
-//  textSize(15);
-//  text("alpha: " + alpha, 25, 50);
-//  text("beta: " + beta, 25, 70);
-//  text("gamma: " + gamma, 25, 90);
-//  textSize(20);
-//  text("acceleration data:", 25, 125);
-//  textSize(15);
-//  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
-//  text("y = " + y, 25, 170);
-//  text("z = " + z, 25, 190);
+  //  text("orientation data:", 25, 25);
+  //  textSize(15);
+  //  text("alpha: " + alpha, 25, 50);
+  //  text("beta: " + beta, 25, 70);
+  //  text("gamma: " + gamma, 25, 90);
+  //  textSize(20);
+  //  text("acceleration data:", 25, 125);
+  //  textSize(15);
+  //  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
+  //  text("y = " + y, 25, 170);
+  //  text("z = " + z, 25, 190);
 
 
 }
@@ -150,14 +154,14 @@ function Car() {
   this.display = function() {
 
     // maybe use an image here instead!
-    image(orc, this.pos.x - 75, this.pos.y, 70, 70 );
+    image(orc, this.pos.x - 75, this.pos.y, 70, 70);
     //fill(this.r, this.g, this.b, this.a);
     //ellipse(this.pos.x - 50, this.pos.y, 50, 50);
     //ellipse(this.pos.x + 50, this.pos.y, 50, 50);
     //rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
 
   }
-//don't change
+  //don't change
   this.drive = function() {
     this.pos.add(this.vel);
 
